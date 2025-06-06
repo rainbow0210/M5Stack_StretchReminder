@@ -32,6 +32,11 @@ void loop() {
   case 0:
     Serial.println("accelX, Y, Z");     // 加速度項目
     Serial.printf("%7.2f, %7.2f, %7.2f\n", accX, accY, accZ);   // 加速度
+
+    M5.Lcd.setTextSize(4);
+    M5.Lcd.setCursor(10, 10);
+    M5.Lcd.printf("%7.2f, %7.2f, %7.2f\n", accX, accY, accZ);
+
     break;
   case 1:
     Serial.println("gyroX, Y, Z");      // ジャイロ項目
@@ -45,10 +50,20 @@ void loop() {
   case 2:
     Serial.println("pitch, roll, yaw"); // 姿勢角
     Serial.printf("%7.2f, %7.2f, %7.2f\n", pitch, roll, yaw);   // 姿勢角
+
+    M5.Lcd.setTextSize(4);
+    M5.Lcd.setCursor(10, 10);
+    M5.Lcd.printf("%7.2f, %7.2f, %7.2f\n", pitch, roll, yaw);  
+
     break;
   case 3:
     Serial.println("AngleX,Y");         // 角度項目
     Serial.printf("%5.1f, %5.1f\n", x_angle, y_angle);  // 加速度から換算した角度
+
+    M5.Lcd.setTextSize(4);
+    M5.Lcd.setCursor(10, 10);
+    M5.Lcd.printf("%5.1f, %5.1f\n", x_angle, y_angle);
+
     break;
   }
   delay(100);
